@@ -1,6 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+
+
+import { setCookie } from '../../../services/cookieService';
+
+
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -55,6 +61,7 @@ export default function LoginPage() {
 
       if (data?.accessToken) {
         storeUserInfo(data.accessToken);
+        setCookie('authToken', data.accessToken, { path: '/' });
         console.log(data);
         router.push("/dashboard");
         console.log(getUserInfo());

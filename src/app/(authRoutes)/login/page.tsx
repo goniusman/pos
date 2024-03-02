@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 
-import { setCookie } from '../../../services/cookieService';
+import { setCookie } from '@/services/cookieService';
 
 
 
